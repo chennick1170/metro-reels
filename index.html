@@ -1,20 +1,23 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>Metro Reels</title>
+  <title>Metro Reels 一頁式推薦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html { height: 100%; overflow: hidden; font-family: sans-serif; }
+    body, html { height: 100%; overflow: hidden; font-family: sans-serif; background: black; color: white; }
     .reel-container { height: 100vh; scroll-snap-type: y mandatory; overflow-y: scroll; }
     .reel { position: relative; height: 100vh; scroll-snap-align: start; }
-    video { position: absolute; width: 100%; height: 100%; object-fit: cover; }
-    .info { position: absolute; bottom: 80px; left: 16px; color: white; text-shadow: 0 0 5px black; }
-    .buttons { position: absolute; bottom: 80px; right: 16px; display: flex; flex-direction: column; gap: 12px; }
+    video { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .info { position: absolute; bottom: 120px; left: 16px; z-index: 2; text-shadow: 0 0 5px black; }
+    .info h2 { font-size: 22px; margin-bottom: 6px; }
+    .info p { font-size: 14px; color: #00ffc8; }
+    .buttons { position: absolute; bottom: 120px; right: 16px; display: flex; flex-direction: column; gap: 12px; z-index: 2; }
     .buttons button { background: white; border: none; border-radius: 50%; padding: 14px; font-size: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.4); }
-    .route { font-size: 14px; color: #00ffc8; margin-top: 6px; }
+    .map-card { position: absolute; bottom: 0; width: 100%; height: 100px; background: rgba(0,0,0,0.7); z-index: 1; display: flex; justify-content: center; align-items: center; }
+    .map-card iframe { width: 90%; height: 90%; border: none; border-radius: 8px; }
   </style>
 </head>
 <body>
@@ -24,12 +27,15 @@
         <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
       </video>
       <div class="info">
-        <div style="font-size: 20px; font-weight: bold;">台北車站｜美食推薦</div>
-        <div class="route">南京復興 → 忠孝新生 → 台北車站</div>
+        <h2>台北車站｜美食推薦</h2>
+        <p>南京復興 → 忠孝新生 → 台北車站</p>
       </div>
       <div class="buttons">
         <button>❤️</button>
         <button>📅</button>
+      </div>
+      <div class="map-card">
+        <iframe src="https://www.google.com/maps/embed/v1/place?q=台北車站&key=AIzaSyBwfhTfUX9Av2taLx5daTmlcvbzz5lD9Ds" allowfullscreen></iframe>
       </div>
     </div>
     <div class="reel">
@@ -37,12 +43,15 @@
         <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
       </video>
       <div class="info">
-        <div style="font-size: 20px; font-weight: bold;">劍潭｜夜市吃爆</div>
-        <div class="route">南京復興 → 中山 → 民權西路 → 劍潭</div>
+        <h2>劍潭夜市｜夜市吃爆</h2>
+        <p>南京復興 → 中山 → 民權西路 → 劍潭</p>
       </div>
       <div class="buttons">
         <button>❤️</button>
         <button>📅</button>
+      </div>
+      <div class="map-card">
+        <iframe src="https://www.google.com/maps/embed/v1/place?q=劍潭站&key=AIzaSyBwfhTfUX9Av2taLx5daTmlcvbzz5lD9Ds" allowfullscreen></iframe>
       </div>
     </div>
     <div class="reel">
@@ -50,12 +59,15 @@
         <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" type="video/mp4">
       </video>
       <div class="info">
-        <div style="font-size: 20px; font-weight: bold;">台北101｜文青拍照點</div>
-        <div class="route">南京復興 → 忠孝復興 → 信義安和 → 台北101/世貿</div>
+        <h2>台北101｜文青拍照點</h2>
+        <p>南京復興 → 忠孝復興 → 信義安和 → 台北101/世貿</p>
       </div>
       <div class="buttons">
         <button>❤️</button>
         <button>📅</button>
+      </div>
+      <div class="map-card">
+        <iframe src="https://www.google.com/maps/embed/v1/place?q=台北101&key=AIzaSyBwfhTfUX9Av2taLx5daTmlcvbzz5lD9Ds" allowfullscreen></iframe>
       </div>
     </div>
   </div>
